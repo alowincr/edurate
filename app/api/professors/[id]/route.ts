@@ -3,10 +3,12 @@ import { supabaseAdmin } from '@/lib/supabase-admin'
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  // CAMBIO 1: Agregamos Promise a la definición de params
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = params
+    // CAMBIO 2: Usamos await para obtener el id
+    const { id } = await params
 
     const { data: professor, error } = await supabaseAdmin
       .from('professors')
