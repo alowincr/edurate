@@ -27,41 +27,49 @@ Plataforma web de evaluación docente universitaria, anónima y confiable. Los e
 ## 📸 Capturas de pantalla
 
 <div align="center">
-  <table>
+  <img src="public/screenshots/dashboard_edurate.png" alt="Dashboard Principal" width="80%" />
+  <br />
+  <p><i>📊 Panel Principal (Dashboard) - Resumen de actividad.</i></p>
+  
+  <br />
+  <hr />
+  <br />
+
+  <img src="public/screenshots/evaluar_edurate.png" alt="Formulario de Evaluación" width="75%" />
+  <br />
+  <p><i>⭐ Formulario de Evaluación Detallada - Criterios y moderación.</i></p>
+
+  <br />
+  <hr />
+  <br />
+
+  <table width="100%">
     <tr>
       <td width="50%" align="center">
-        <img src="./public/screenshots/dashboard_edurate.png" alt="Panel Principal - Dashboard" width="100%" />
+        <img src="public/screenshots/ranking_edurate.png" alt="Ranking" width="100%" />
         <br />
-        <b>Panel del Estudiante (Dashboard)</b>
+        <b>🏆 Ranking de Profesores</b>
       </td>
       <td width="50%" align="center">
-        <img src="./public/screenshots/ranking_edurate.png" alt="Ranking de Profesores" width="100%" />
+        <img src="public/screenshots/profesores_edurate.png" alt="Lista de Profesores" width="100%" />
         <br />
-        <b>Ranking de Profesores</b>
+        <b>🔍 Búsqueda de Docentes</b>
       </td>
     </tr>
+  </table>
+  
+  <br />
+
+  <table width="100%">
     <tr>
-      <td width="50%" align="center">
-        <img src="./public/screenshots/profesores_edurate.png" alt="Búsqueda de Profesores" width="100%" />
+      <td align="center">
+        <img src="public/screenshots/registrar_edurate.png" alt="Registrar Profesor" width="60%" />
         <br />
-        <b>Búsqueda y Lista de Profesores</b>
-      </td>
-      <td width="50%" align="center">
-        <img src="./public/screenshots/registrar_edurate.png" alt="Registrar Nuevo Profesor" width="100%" />
-        <br />
-        <b>Registrar Nuevo Profesor</b>
-      </td>
-    </tr>
-    <tr>
-      <td width="100%" align="center" colspan="2">
-        <img src="./public/screenshots/evaluar_edurate.png" alt="Formulario de Evaluación" width="100%" />
-        <br />
-        <b>Formulario de Evaluación (Criterios y Moderación)</b>
+        <b>📝 Registro de Profesores</b>
       </td>
     </tr>
   </table>
 </div>
-
 
 ## 📁 Estructura del proyecto
 edurate/
