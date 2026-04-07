@@ -14,6 +14,7 @@ const nextConfig: NextConfig = {
       allowedOrigins: [
         'localhost:3000',
         'edurate.vercel.app',
+        'edurate-zeta.vercel.app', // <--- AGREGAMOS ESTA
       ],
     },
   },
