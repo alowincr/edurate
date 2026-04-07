@@ -245,5 +245,5 @@ update users set is_admin = true where email = 'correo@universidad.edu.pe';
 Este proyecto está bajo la licencia MIT.  
 Puedes usarlo, modificarlo y distribuirlo libremente, siempre que se incluya el crédito al autor.
 
----
+--- 
 
