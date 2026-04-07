@@ -1,6 +1,18 @@
+<div align="center">
+
 # 🎓 EduRate
 
-Plataforma web de evaluación docente universitaria, anónima y confiable. Los estudiantes evalúan a sus profesores usando criterios objetivos y datos reales.
+**Plataforma web de evaluación docente universitaria, anónima y confiable.**
+
+[![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge&logo=vercel)](https://edurate-zeta.vercel.app)
+[![Supabase](https://img.shields.io/badge/Backend-Supabase-blue?style=for-the-badge&logo=supabase)](https://supabase.com)
+[![Next.js](https://img.shields.io/badge/Framework-Next.js%2015-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+
+[🌐 Explorar la aplicación](https://edurate-zeta.vercel.app) • [🛠️ Reportar un error](https://github.com/alowincr/edurate/issues)
+
+---
+</div>
 
 ## ✨ Características
 
@@ -240,12 +252,36 @@ begin
 end;
 $$ language plpgsql;
 
--- Deshabilitar RLS para desarrollo
-alter table users disable row level security;
-alter table professors disable row level security;
-alter table courses disable row level security;
-alter table evaluations disable row level security;
-alter table reports disable row level security;
+-- 🔐 Configuración de Seguridad (Row Level Security)
+-- Habilitar RLS en todas las tablas para proteger la integridad de los datos
+alter table users enable row level security;
+alter table professors enable row level security;
+alter table courses enable row level security;
+alter table evaluations enable row level security;
+alter table reports enable row level security;
+
+-- Políticas de Lectura (Públicas)
+create policy "Lectura pública de profesores" on professors for select using (true);
+create policy "Lectura pública de cursos" on courses for select using (true);
+create policy "Evaluaciones aprobadas son públicas" on evaluations for select using (is_approved = true);
+
+-- Políticas de Escritura (Solo usuarios autenticados)
+create policy "Usuarios verificados pueden registrar profesores" 
+  on professors for insert 
+  with check (auth.role() = 'authenticated');
+
+create policy "Usuarios pueden crear sus propias evaluaciones" 
+  on evaluations for insert 
+  with check (auth.role() = 'authenticated' and auth.uid()::text = user_id::text);
+
+-- Políticas de Modificación (Solo el autor)
+create policy "Usuarios pueden editar su propia evaluación" 
+  on evaluations for update 
+  using (auth.uid()::text = user_id::text);
+
+create policy "Usuarios pueden borrar su propia evaluación" 
+  on evaluations for delete 
+  using (auth.uid()::text = user_id::text);
 ```
 
 ### 5. Correr el proyecto
