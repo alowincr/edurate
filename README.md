@@ -24,6 +24,45 @@ Plataforma web de evaluación docente universitaria, anónima y confiable. Los e
 | [@supabase/ssr](https://supabase.com/docs/guides/auth/server-side) | Manejo de sesiones SSR |
 | [Vercel](https://vercel.com/) | Deploy y hosting |
 
+## 📸 Capturas de pantalla
+
+<div align="center">
+  <table>
+    <tr>
+      <td width="50%" align="center">
+        <img src="./public/screenshots/dashboard_edurate.png" alt="Panel Principal - Dashboard" width="100%" />
+        <br />
+        <b>Panel del Estudiante (Dashboard)</b>
+      </td>
+      <td width="50%" align="center">
+        <img src="./public/screenshots/ranking_edurate.png" alt="Ranking de Profesores" width="100%" />
+        <br />
+        <b>Ranking de Profesores</b>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%" align="center">
+        <img src="./public/screenshots/profesores_edurate.png" alt="Búsqueda de Profesores" width="100%" />
+        <br />
+        <b>Búsqueda y Lista de Profesores</b>
+      </td>
+      <td width="50%" align="center">
+        <img src="./public/screenshots/registrar_edurate.png" alt="Registrar Nuevo Profesor" width="100%" />
+        <br />
+        <b>Registrar Nuevo Profesor</b>
+      </td>
+    </tr>
+    <tr>
+      <td width="100%" align="center" colspan="2">
+        <img src="./public/screenshots/evaluar_edurate.png" alt="Formulario de Evaluación" width="100%" />
+        <br />
+        <b>Formulario de Evaluación (Criterios y Moderación)</b>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
 ## 📁 Estructura del proyecto
 edurate/
 ├── app/
