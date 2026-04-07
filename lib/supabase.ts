@@ -20,13 +20,16 @@ export const createSupabaseClient = () => {
 }
 
 // 2. Cliente Administrativo (Solo Servidor)
-export const supabaseAdmin = createClient(
-  supabaseUrl,
-  process.env.SUPABASE_SERVICE_ROLE_KEY || '',
-  {
-    auth: {
-      autoRefreshToken: false,
-      persistSession: false
-    }
-  }
-)
+// Solo lo inicializamos si tenemos las llaves, para que no rompa el cliente
+export const supabaseAdmin = (process.env.SUPABASE_SERVICE_ROLE_KEY)
+  ? createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL || '',
+      process.env.SUPABASE_SERVICE_ROLE_KEY,
+      {
+        auth: {
+          autoRefreshToken: false,
+          persistSession: false
+        }
+      }
+    )
+  : null as any; // En el navegador esto será null y no dará error
